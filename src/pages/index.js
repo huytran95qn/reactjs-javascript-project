@@ -1,1 +1,1 @@
-export { default as Components } from './ReactEssentials/Components';
+export { default as TicTacToe } from './TicTacToe/TicTacToe';

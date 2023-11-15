@@ -1,9 +1,9 @@
 import './App.css'
-import * as Pages from './pages/index';
+import { TicTacToe } from './pages/index';
 
 function App() {
   return (
-    <Pages.Components/>
+    <TicTacToe/>
   )
 }
 
