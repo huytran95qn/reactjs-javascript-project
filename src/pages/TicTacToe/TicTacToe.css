@@ -1,0 +1,65 @@
+.layout {
+    background-color: gray;
+    min-height: 300px;
+    padding: 16px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-auto {
+    flex: auto;
+}
+
+.flex-direction {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 48px;
+    border: unset;
+}
+
+button {
+    height: 48px;
+    background-color: inherit !important;
+    color: white;
+}
+
+.spacer {
+    margin: 0px 16px;
+}
+
+/* Layout User */
+.layout-user.active {
+    border: 1px solid red;
+    padding: 8px;
+}
+
+.layout-body > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.layout-body > * > * {
+    height: 100%;
+    background-color: white;
+    margin: 8px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
