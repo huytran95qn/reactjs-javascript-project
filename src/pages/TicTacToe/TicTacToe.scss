@@ -1,3 +1,9 @@
+h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #fff;
+}
+
 .layout {
     background-color: gray;
     min-height: 300px;
@@ -62,4 +68,15 @@ button {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

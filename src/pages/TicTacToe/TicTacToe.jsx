@@ -1,4 +1,5 @@
-import './TicTacToe.css';
+export { default as GameContainer } from './GameContainer/GameContainer';
+import './TicTacToe.scss';
 
 const TicTacToe = () => {
     return (
@@ -11,7 +12,7 @@ const TicTacToe = () => {
                         <LayoutUser />
                     </>
                 )}>
-                <LayoutBody />
+                <GameContainer />
             </Layout>
         </>
     )
@@ -43,28 +44,6 @@ function Layout({ header, children }) {
             </div>
 
             {children}
-        </div>
-    )
-}
-
-function LayoutBody() {
-    return (
-        <div className='layout-body flex flex-direction-column flex-auto'>
-            <div className="flex flex-direction">
-                <div className='flex-auto'></div>
-                <div className='flex-auto'></div>
-                <div className='flex-auto'></div>
-            </div>
-            <div className="flex flex-direction">
-                <div className='flex-auto'></div>
-                <div className='flex-auto'></div>
-                <div className='flex-auto'></div>
-            </div>
-            <div className="flex flex-direction">
-                <div className='flex-auto'></div>
-                <div className='flex-auto'></div>
-                <div className='flex-auto'></div>
-            </div>
         </div>
     )
 }
