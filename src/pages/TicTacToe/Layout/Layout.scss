@@ -1,0 +1,10 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+
+    &-header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 16px;
+    }
+}

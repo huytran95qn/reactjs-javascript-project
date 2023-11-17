@@ -1,19 +1,34 @@
-export { default as GameContainer } from './GameContainer/GameContainer';
+import { GameContainer } from './GameContainer/GameContainer';
+import { Player } from './Player/Player';
+import { TicTacToeLayout } from './Layout/Layout';
+
 import './TicTacToe.scss';
 
-const TicTacToe = () => {
+export const TicTacToe = () => {
+    let player1 = {
+        name: 'Player 1',
+        icon: 'X'
+    };
+
+    let player2 = {
+        name: 'Player 2',
+        icon: 'O'
+    };
+
+    let currentPlayer = player1;
+
     return (
         <>
-            <Layout
+            <TicTacToeLayout
                 header={(
                     <>
-                        <LayoutUser active="true"/>
+                        <Player {...player1} />
                         <Spacer />
-                        <LayoutUser />
+                        <Player {...player2}/>
                     </>
                 )}>
-                <GameContainer />
-            </Layout>
+                <GameContainer player={currentPlayer}/>
+            </TicTacToeLayout>
         </>
     )
 }
@@ -23,29 +38,3 @@ function Spacer() {
         <div className='spacer'></div>
     )
 }
-
-function LayoutUser({ active = false }) {
-    let className = "layout-user flex flex-direction flex-center-center";
-    className += (active ? ' active' : '' )
-    return (
-        <div className={className}>
-            <input  />
-            <Spacer />
-            <button>Edit</button>
-        </div>
-    )
-}
-
-function Layout({ header, children }) {
-    return (
-        <div className="layout flex flex-direction-column">
-            <div className="flex flex-direction">
-                {header}
-            </div>
-
-            {children}
-        </div>
-    )
-}
-
-export default TicTacToe;

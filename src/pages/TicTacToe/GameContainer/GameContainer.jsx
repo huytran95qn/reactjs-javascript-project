@@ -1,25 +1,25 @@
 import './GameContainer.scss'
+import React, { useState } from 'react';
+import { emptyContainer } from '../Utils/Utils'
 
-const GameContainer = () => {
+export const GameContainer = ({ player }) => {
+    const [cells, setCells] = useState(emptyContainer())
+
     function makeMove(index) {
-        console.log(index)
+        cells[index] = player.icon;
+        setCells([...cells]);
     }
 
     return (
-        <div class="game-container">
-            <div class="board">
-                <div class="cell" onclick={makeMove(0)}></div>
-                <div class="cell" onclick={makeMove(1)}></div>
-                <div class="cell" onclick={makeMove(2)}></div>
-                <div class="cell" onclick={makeMove(3)}></div>
-                <div class="cell" onclick={makeMove(4)}></div>
-                <div class="cell" onclick={makeMove(5)}></div>
-                <div class="cell" onclick={makeMove(6)}></div>
-                <div class="cell" onclick={makeMove(7)}></div>
-                <div class="cell" onclick={makeMove(8)}></div>
+        <div className="game-container">
+            <div className="board">
+                {
+                    cells.map((cell, index) => (
+                        <div key={index} className="cell" onClick={() => makeMove(index)}>{cell}</div>)
+                    )
+                }
             </div>
         </div>
     )
 }
 
-export default GameContainer;
