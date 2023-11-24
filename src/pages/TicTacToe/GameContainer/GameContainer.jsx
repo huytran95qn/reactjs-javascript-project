@@ -2,12 +2,13 @@ import './GameContainer.scss'
 import React, { useState } from 'react';
 import { emptyContainer } from '../Utils/Utils'
 
-export const GameContainer = ({ player }) => {
+export const GameContainer = ({ player, onChange }) => {
     const [cells, setCells] = useState(emptyContainer())
 
     function makeMove(index) {
         cells[index] = player.icon;
         setCells([...cells]);
+        onChange(index)
     }
 
     return (

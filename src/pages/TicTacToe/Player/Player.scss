@@ -1,6 +1,11 @@
 .player {
     display: flex;
     flex: auto;
+    padding: 8px;
+
+    &.active {
+        border: 1px solid;
+    }
 
     &-name {
         width: 180px;

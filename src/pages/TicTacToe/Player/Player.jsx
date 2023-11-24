@@ -1,9 +1,7 @@
 import { useState } from "react";
 import './Player.scss'
 
-export function Player({ name, icon }) {
-    const [playerName, setPlayerName] = useState(name);
-
+export function Player({ player, setPlayer, isActive }) {
     const [isEditing, setIsEditing] = useState('')
 
     const playerNameContainer = isEditing
@@ -11,16 +9,19 @@ export function Player({ name, icon }) {
             className="player-name"
             type="text"
             required
-            value={playerName}
-            onChange={(event) => setPlayerName(event.target.value)}/>
-        : <span className="player-name">{playerName}</span>;
+            value={player.name}
+            onChange={(event) => setPlayer({
+                ...player,
+                name: event.target.value
+            })}/>
+        : <span className="player-name">{player.name}</span>;
 
-        
+    const className = `player ${isActive ? 'active' : ''}`
     return (
-        <div className="player">
+        <div className={className}>
             {playerNameContainer}
 
-            <span className="player-icon">{icon}</span>
+            <span className="player-icon">{player.icon}</span>
             
             <button className="player-button" 
                 onClick={() => setIsEditing(!isEditing)}>{ isEditing ? 'Save' : 'Edit' }</button>
